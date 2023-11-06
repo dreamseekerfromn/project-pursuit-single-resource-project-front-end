@@ -9,10 +9,10 @@ export default function NavBar() {
           Home
         </Link>
         <Link to="/posts" className="nav-link">
-          Songs
+          Posts
         </Link>
         <Link to="/posts/new" className="nav-link">
-          New Song
+          New Post
         </Link>
       </div>
     </nav>
