@@ -1,5 +1,8 @@
 
 import './App.css'
+import Footer from './components/Footer'
+import FourOFour from './pages/FourOFour'
+import Home from './pages/Home'
 
 function App() {
   return (
@@ -9,10 +12,12 @@ function App() {
         <NavBar />
         <main>
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="*" element={<FourOFour />} />
           </Routes>
         </main>
       </Router>
+      <Footer />
     </div>
   )
 }

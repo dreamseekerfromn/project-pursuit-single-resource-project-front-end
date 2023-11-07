@@ -8,6 +8,7 @@
 export default function Footer(){
     return(
         <footer>
-            <p>This webpage is created by Sung Yi</p>
-        </footer>)
+            <p>This webpage is created by </p>
+        </footer>
+    )
 }
