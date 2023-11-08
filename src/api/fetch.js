@@ -8,12 +8,12 @@ export async function getAllMessages() {
 }
 
 // index/Get one
-export async function getSingleSong(id) {
+export async function getSingleMessage(id) {
     return await fetch(`${URL}/posts/${id}`).then((res) => res.json());
 }
 
 // Create
-export async function createSong(item) {
+export async function createMessage(item) {
     return await fetch(`${URL}/posts/`, {
         method: "POST",
         headers: {
@@ -25,7 +25,7 @@ export async function createSong(item) {
 }
 
 // Update
-export async function updateSong(id, item) {
+export async function updateMessage(id, item) {
     return await fetch(`${URL}/posts/${id}`, {
         method: "PUT",
         headers: {
