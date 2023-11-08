@@ -19,7 +19,7 @@ function PostNewForm() {
    * ========================================
    * change incomeItem state hook whenever input or textarea is changed.
    *  
-   * @param {customInputEventBundle} event
+   * @param {HTMLInputElement} event
    */
   const handleTextChange = (event) => {
     setSinglePost({ ...singlePost, [event.target.id]: event.target.value });
@@ -30,7 +30,7 @@ function PostNewForm() {
    * handleSubmit()
    * ================================
    * POST a new data to the back-end.
-   * @param {React.ChangeEvent<HTMLFormElement>} event 
+   * @param {HTMLFormElement} event 
    */
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -47,50 +47,24 @@ function PostNewForm() {
       };
 */
   return (
-    <div className="New">
+    <div className="input-group new_entry">
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input
           id="name"
-          value={song.name}
+          value={singlePost.user_name}
           type="text"
           onChange={handleTextChange}
-          placeholder="song name"
+          placeholder="user name"
           required
-        />
-        <label htmlFor="artist">Artist:</label>
-        <input
-          id="artist"
-          value={song.artist}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="Artist name"
-          required
-        />
-        <label htmlFor="album">Album Name:</label>
-        <input
-          id="album"
-          type="text"
-          required
-          value={song.album}
-          placeholder="Album name"
-          onChange={handleTextChange}
         />
         <label htmlFor="time">Length:</label>
-        <input
-          id="time"
-          type="text"
+        <textarea
+          id="message"
           required
-          value={song.time}
-          placeholder="length of time"
+          value={singlePost.thread_message}
+          placeholder="message"
           onChange={handleTextChange}
-        />
-        <label htmlFor="is_favorite">Is Favorite?:</label>
-        <input
-          id="is_favorite"
-          type="checkbox"
-          onChange={handleCheckboxChange}
-          checked={song.is_favorite}
         />
         <br />
         <input type="submit" />
