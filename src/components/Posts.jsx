@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Post from "./Post"; 
 import { postsObjInitializer } from "../interfaces/fetchingObjInitializer";
+import { getAllMessages } from "../api/fetch";
 
 const API = import.meta.env.VITE_BASE_URL;
 
@@ -8,8 +9,7 @@ function Posts() {
     const [posts, setPosts] = useState([postsObjInitializer]);
 
     useEffect(() => {
-        fetch(`${API}/posts`)
-        .then((response) => response.json())
+        getAllMessages()
         .then ((responseJSON) => {
             console.log(responseJSON)
             setPosts(responseJSON.data.payload);
@@ -19,11 +19,7 @@ function Posts() {
     return (
         <div className="posts-container">
             <h2>All Posts</h2>
-            <table className="posts-table">
-                <tbody>
                     {posts.map((post) => <Post key={post.thread_id} post={post} />)}
-                </tbody>
-            </table>
         </div>
     )
 }
