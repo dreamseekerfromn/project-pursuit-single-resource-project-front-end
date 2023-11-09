@@ -1,1 +1,10 @@
+.root {
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
 
+main {
+    height: 90vh;
+    width: 100vw;
+}
