@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Post from "./Post"; 
+import { postsObjInitializer } from "../interfaces/fetchingObjInitializer";
 
 const API = import.meta.env.VITE_BASE_URL;
 
 function Posts() {
-    const [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState([postsObjInitializer]);
 
     useEffect(() => {
         fetch(`${API}/posts`)
@@ -20,9 +21,7 @@ function Posts() {
             <h2>All Posts</h2>
             <table className="posts-table">
                 <tbody>
-                    {posts.map((post) => {
-                    return <Post key={post.id} post={post} />
-                    })}
+                    {posts.map((post) => <Post key={post.thread_id} post={post} />)}
                 </tbody>
             </table>
         </div>
