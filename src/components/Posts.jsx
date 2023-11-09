@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import Post from "./Post"; 
 import { postsObjInitializer } from "../interfaces/fetchingObjInitializer";
 import { getAllMessages } from "../api/fetch";
-
-const API = import.meta.env.VITE_BASE_URL;
+import './Posts.css'
 
 function Posts() {
     const [posts, setPosts] = useState([postsObjInitializer]);
