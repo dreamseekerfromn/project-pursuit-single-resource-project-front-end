@@ -34,6 +34,7 @@ function PostNewForm() {
    */
   const handleSubmit = (event) => {
     event.preventDefault();
+    setSinglePost({...singlePost, ["time_stamp"]: String(Date.now())})
     createMessage(singlePost)
         .then(() => {
           console.log("create success!");
