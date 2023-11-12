@@ -34,11 +34,13 @@ function PostNewForm() {
    */
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSinglePost({...singlePost, ["time_stamp"]: Number(Date.now())})
+    const timeStamp = Date.now()
+    setSinglePost({...singlePost, ["time_stamp"]: timeStamp})
+    console.log(singlePost)
     createMessage(singlePost)
         .then(() => {
           console.log("create success!");
-          nav("/songs");
+          nav("/posts");
         })
         .catch((err)=>console.error(err));
     }
