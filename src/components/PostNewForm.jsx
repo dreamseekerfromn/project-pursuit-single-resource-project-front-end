@@ -34,7 +34,7 @@ function PostNewForm() {
    */
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSinglePost({...singlePost, ["time_stamp"]: String(Date.now())})
+    setSinglePost({...singlePost, ["time_stamp"]: Number(Date.now())})
     createMessage(singlePost)
         .then(() => {
           console.log("create success!");
@@ -48,24 +48,32 @@ function PostNewForm() {
       };
 */
   return (
-    <div className="input-group new_entry">
+    <div className="new_entry">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="user_name">Name:</label>
         <input
-          id="name"
+          id="user_name"
           value={singlePost.user_name}
           type="text"
           onChange={handleTextChange}
           placeholder="user name"
           required
         />
-        <label htmlFor="time">Length:</label>
+        <label htmlFor="thread_message">Message:</label>
         <textarea
-          id="message"
-          required
+          id="thread_message"
           value={singlePost.thread_message}
           placeholder="message"
           onChange={handleTextChange}
+          required
+        />
+        <label htmlFor="profile_pic">profile:</label>
+        <input
+          id="profile_pic"
+          value={singlePost.profile_pic}
+          type="text"
+          onChange={handleTextChange}
+          placeholder="profile_picture link"
         />
         <br />
         <input type="submit" />

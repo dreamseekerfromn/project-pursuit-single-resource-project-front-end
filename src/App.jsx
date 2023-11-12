@@ -5,6 +5,7 @@ import FourOFour from './pages/FourOFour'
 import Home from './pages/Home'
 import NavBar from './components/NavBar';
 import Posts from './components/Posts';
+import PostNewForm from './components/PostNewForm';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/posts" element={<Posts />} />
+            <Route path="/posts/new" element={<PostNewForm />} />
             <Route path="*" element={<FourOFour />} />
           </Routes>
         </main>
