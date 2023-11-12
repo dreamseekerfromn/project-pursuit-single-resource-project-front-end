@@ -3,8 +3,8 @@ import './App.css'
 import Footer from './components/Footer'
 import FourOFour from './pages/FourOFour'
 import Home from './pages/Home'
-import NavBar from './components/NavBar';
-import Posts from './components/Posts';
+import NavBar from './Components/NavBar';
+import Posts from './Components/Posts';
 
 function App() {
   return (
