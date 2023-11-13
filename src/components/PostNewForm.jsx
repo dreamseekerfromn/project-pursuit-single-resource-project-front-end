@@ -32,12 +32,12 @@ function PostNewForm() {
    * POST a new data to the back-end.
    * @param {HTMLFormElement} event 
    */
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     let timeStamp = Date.now();
     setSinglePost({...singlePost, ["time_stamp"]: timeStamp});
     console.log(singlePost)
-    createMessage(singlePost)
+    await createMessage(singlePost)
         .then(() => {
           console.log("create success!");
           nav("/posts");
