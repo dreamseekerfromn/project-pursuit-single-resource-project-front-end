@@ -34,8 +34,8 @@ function PostNewForm() {
    */
   const handleSubmit = (event) => {
     event.preventDefault();
-    const timeStamp = Date.now()
-    setSinglePost({...singlePost, ["time_stamp"]: timeStamp})
+    let timeStamp = Date.now();
+    setSinglePost({...singlePost, ["time_stamp"]: timeStamp});
     console.log(singlePost)
     createMessage(singlePost)
         .then(() => {
