@@ -8,7 +8,8 @@ import SingleReply from "./SingleReply";
 
 function PostDetails() {
     const [ replies, setReplies ] = useState([{...replysObjInitializer}]);
-    const [ post, setPost ] = useState({thread_id: 0,
+    const [ post, setPost ] = useState({
+        thread_id: 0,
         user_id: 0,
         user_name: "",
         time_stamp: Date.now(),
@@ -39,7 +40,7 @@ function PostDetails() {
             <div className="card">
                 {ready ? (<>
                 <div className="card-header">
-                    {/*<img className="profile_pic" src={post["profile_pic"] ? post.profile_pic : "src/assets/default_profile_pic.jpeg"}/>*/}
+                    {<img className="profile_pic" src={post.profile_pic ? post.profile_pic : "../src/assets/default_profile_pic.jpeg"}/>}
                     <span className="user_name">{post.user_name}</span>
                 </div>
                 <div className="card-body">
@@ -48,7 +49,7 @@ function PostDetails() {
                     <p class="card-text">{post.thread_message}</p>
                 </div>
                 <div className="card-body">
-                    {replies.map((reply) => <SingleReply reply={reply} />)}
+                    {replies.sort((prev, next) => prev.time_stamp >= next.time_stamp ? -1 : 1).map((reply) => <SingleReply reply={reply} />)}
                     <PostSingleReply />
                 </div></>) : (<p>still loading stuff</p>)}
             </div>

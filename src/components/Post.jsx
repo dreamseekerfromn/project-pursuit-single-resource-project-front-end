@@ -6,7 +6,7 @@ import "./Post.css";
 function Post({ post, index }) {
     return (
         <Link to={`/posts/${post.thread_id}`}>
-            <div className="card">
+            <div className="post card">
                 <div className="card-header">
                     <img className="profile_pic" src={post.profile_pic ? post.profile_pic : "src/assets/default_profile_pic.jpeg"}/>
                     <span className="user_name">{post.user_name}</span>
