@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { createReply } from "../api/fetch";
 
 export default function PostSingleReply(){
+    const {id} = useParams();
     const [singleReply, setSingleReply] = useState({
-        thread_id:0,
+        thread_id:id,
         reply_user: "",
         reply_message: "",
         reply_timestamp: Date.now(),
@@ -19,7 +21,7 @@ export default function PostSingleReply(){
      * @param {HTMLInputElement} event
      */
     const handleTextChange = (event) => {
-        setSinglePost({ ...singlePost, [event.target.id]: event.target.value });
+        setSingleReply({ ...singleReply, [event.target.id]: event.target.value });
     };
 
     
@@ -32,11 +34,11 @@ export default function PostSingleReply(){
     const handleSubmit = async (event) => {
         event.preventDefault();
         let timeStamp = Date.now();
-        setSingleReply({...singleReply, ["time_stamp"]: timeStamp});
-        await createReply(singlePost)
+        setSingleReply({...singleReply, ["reply_timestamp"]: timeStamp});
+        await createReply(singleReply)
             .then(() => {
             console.log("create success!");
-            nav("/posts");
+            nav("/posts/:id");
             })
             .catch((err)=>console.error(err));
         }
@@ -50,28 +52,28 @@ export default function PostSingleReply(){
         <form onSubmit={handleSubmit}>
             <label htmlFor="user_name">Name:</label>
             <input
-            id="user_name"
-            value={singlePost.user_name}
-            type="text"
-            onChange={handleTextChange}
-            placeholder="user name"
-            required
+                id="reply_user"
+                value={singleReply.reply_user}
+                type="text"
+                onChange={handleTextChange}
+                placeholder="user name"
+                required
             />
-            <label htmlFor="thread_message">Message:</label>
-            <textarea
-            id="thread_message"
-            value={singlePost.thread_message}
-            placeholder="message"
-            onChange={handleTextChange}
-            required
-            />
-            <label htmlFor="profile_pic">profile:</label>
+            <label htmlFor="profile_pic">password:</label>
             <input
-            id="profile_pic"
-            value={singlePost.profile_pic}
-            type="text"
-            onChange={handleTextChange}
-            placeholder="profile_picture link"
+                id="reply_pw"
+                value={singleReply.reply_pw}
+                type="text"
+                onChange={handleTextChange}
+                placeholder="profile_picture link"
+            />
+            <label htmlFor="reply_message">Message:</label>
+            <textarea
+                id="reply_message"
+                value={singleReply.reply_message}
+                placeholder="message"
+                onChange={handleTextChange}
+                required
             />
             <br />
             <input type="submit" />
