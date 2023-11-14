@@ -12,7 +12,7 @@ function Post({ post, index }) {
                     <span className="user_name">{post.user_name}</span>
                 </div>
                 <div className="card-body">
-                    <span className="time_stamp">{Date(Number(post.time_stamp) * 1000).toLocaleString()}</span>
+                    <span className="time_stamp">{new Date(Number(post.time_stamp) * 1000).toLocaleString()}</span>
                     {post.message_pic ? (<img className="card-img-top" src={post.message_pic} />) : null}
                     <p class="card-text">{post.thread_message}</p>
                 </div>

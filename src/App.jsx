@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import NavBar from './components/NavBar';
 import Posts from './components/Posts';
 import New from "./Pages/New";
+import PostDetails from './components/PostDetails';
 
 
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/posts" element={<Posts />} />
             <Route path="/posts/new" element={<New />} />
+            <Route path="/posts/:id" element={<PostDetails />} />
             <Route path="*" element={<FourOFour />} />
           </Routes>
         </main>
