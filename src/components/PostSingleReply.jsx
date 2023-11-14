@@ -24,7 +24,6 @@ export default function PostSingleReply(){
         setSingleReply({ ...singleReply, [event.target.id]: event.target.value });
     };
 
-    
     /**
      * handleSubmit()
      * ================================
@@ -38,7 +37,7 @@ export default function PostSingleReply(){
         await createReply(singleReply)
             .then(() => {
             console.log("create success!");
-            nav("/posts/:id");
+            nav(`/posts/${id}`);
             })
             .catch((err)=>console.error(err));
         }
