@@ -42,3 +42,10 @@ export async function destroySong(id) {
         method: "DELETE",
     });
 }
+
+export async function getAllReplies(id) {
+    return await fetch(`${URL}/replies/${id}`).then((res) => {
+        console.log(res);
+        return res.json();
+    });
+}

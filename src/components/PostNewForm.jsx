@@ -25,6 +25,13 @@ function PostNewForm() {
       .catch((err) => console.error(err));
   };
 
+
+  /*
+    const handleCheckboxChange = () => {
+        setSinglePost({ ...singlePost, is_favorite: !song.is_favorite });
+      };
+*/
+  
   return (
     <div className="new-entry-container">
       <form className="new-entry-form" onSubmit={handleSubmit}>

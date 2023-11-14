@@ -2,7 +2,7 @@ export const postsObjInitializer = {
     thread_id: 0,
     user_id: 0,
     user_name: "",
-    time_stamp: "",
+    time_stamp: Date.now(),
     thread_message: "",
     profile_pic: "",
     message_pic: "",
