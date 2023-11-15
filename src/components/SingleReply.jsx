@@ -13,10 +13,10 @@ export default function SingleReply({reply}){
     }
     return(
         <div>
-            <button onClick={handleDelete}>Delete</button>
             <span>{reply.reply_user}</span>
             <span className="time_stamp">{new Date(Number(reply.reply_timestamp) * 1000).toLocaleString()}</span>
             <p class="card-text">{reply.reply_message}</p>
+            <button onClick={handleDelete}>Delete</button>
         </div>
     )
     
