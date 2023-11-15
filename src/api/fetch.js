@@ -72,3 +72,15 @@ export async function destroyReply(id, item) {
         body: JSON.stringify(item),
     });
 }
+
+// Update
+export async function updateReply(id, item) {
+    return await fetch(`${URL}/replies/${id}`, {
+        method: "PUT",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(item),
+    });
+}

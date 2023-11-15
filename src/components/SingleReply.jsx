@@ -1,9 +1,12 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { destroyReply } from "../api/fetch"
+import EditReplyForm from "./EditReplyForm";
 
 export default function SingleReply({reply}){
-    const { id } = useParams()
+    const { id } = useParams();
+    const [toggleEditForm, setToggleEditForm] = useState(false);
     const navigate = useNavigate();
+
     const handleDelete = async () => {
         let pw = prompt("password?");
         console.log(pw);
@@ -11,12 +14,20 @@ export default function SingleReply({reply}){
             .then(() => navigate(0))
             .catch(error => console.log(error))
     }
+
+    const handleEditForm = () => {
+        setToggleEditForm(!toggleEditForm);
+    }
+
     return(
-        <div>
-            <span>{reply.reply_user}</span>
-            <span className="time_stamp">{new Date(Number(reply.reply_timestamp) * 1000).toLocaleString()}</span>
-            <p class="card-text">{reply.reply_message}</p>
-            <button onClick={handleDelete}>Delete</button>
+        <div onClick={handleEditForm}>
+            <div className="single-reply-container">
+                <span>{reply.reply_user}</span>
+                <span className="time_stamp">{new Date(Number(reply.reply_timestamp) * 1000).toLocaleString()}</span>
+                <p className="card-text">{reply.reply_message}</p>
+                <button onClick={handleDelete}>Delete</button>
+            </div>
+            {toggleEditForm ? <EditReplyForm reply_id={reply.reply_id} /> : null}
         </div>
     )
     
