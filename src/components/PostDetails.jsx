@@ -1,25 +1,17 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate} from "react-router-dom";
 import { postsObjInitializer, replysObjInitializer } from "../interfaces/fetchingObjInitializer";
-import "./Post.css";
+// import "./Post.css";
 import { getAllReplies, getSingleMessage } from "../api/fetch";
 import PostSingleReply from "./PostSingleReply";
 import SingleReply from "./SingleReply";
-const API = import.meta.env.VITE_APP_API_URL;
+const URL = import.meta.env.VITE_APP_API_URL;
 
 function PostDetails() {
     const [ replies, setReplies ] = useState([{...replysObjInitializer}]);
-    const [ post, setPost ] = useState({
-        thread_id: 0,
-        user_id: 0,
-        user_name: "",
-        time_stamp: Date.now(),
-        thread_message: "",
-        profile_pic: "",
-        message_pic: ""});
+    const [ post, setPost ] = useState({});
     const [ ready, setReady ] = useState(false);
     const navigate = useNavigate();
-    const {index} = useParams();
     const { id } = useParams();
 
     useEffect(() => {
@@ -37,12 +29,12 @@ function PostDetails() {
             setReplies(responseJSON.data.payload);
         })
         .catch((error) => console.log(error));
-    }, [index, navigate]);
+    }, []);
 
     const handleDelete = () => {
         const httpOptions = { method: "DELETE" };
     
-        fetch(`${API}/posts/${index}`, httpOptions)
+        fetch(`${URL}/posts/${id}`, httpOptions)
           .then((res) => {
             console.log(res);
             alert("Post was deleted successfully!");
@@ -71,7 +63,7 @@ function PostDetails() {
             </div>
             <div>
               {" "}
-              <Link to={`/posts/${index}/edit`}>
+              <Link to={`/posts/${id}/edit`}>
                 <button className="button" style={{ padding: "10px" }}>Edit</button>
               </Link>
             </div>
