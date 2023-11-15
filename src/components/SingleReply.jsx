@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { destroyReply } from "../api/fetch"
 import EditReplyForm from "./EditReplyForm";
+import { useState } from "react";
 
 export default function SingleReply({reply}){
     const { id } = useParams();
@@ -20,8 +21,8 @@ export default function SingleReply({reply}){
     }
 
     return(
-        <div onClick={handleEditForm}>
-            <div className="single-reply-container">
+        <div>
+            <div className="single-reply-container" onClick={handleEditForm}>
                 <span>{reply.reply_user}</span>
                 <span className="time_stamp">{new Date(Number(reply.reply_timestamp) * 1000).toLocaleString()}</span>
                 <p className="card-text">{reply.reply_message}</p>
