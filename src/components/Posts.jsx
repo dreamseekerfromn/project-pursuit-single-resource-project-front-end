@@ -34,7 +34,7 @@ function Posts() {
 
     return (
         <div className="posts-container">
-            <h2>All Posts</h2>
+            <h2 className="indexTitle">All Posts</h2>
             {posts.sort((prev, next) => prev.time_stamp >= next.time_stamp ? -1 : 1).map((post) => <Post key={post.thread_id} post={post} />)}
         </div>
     )
