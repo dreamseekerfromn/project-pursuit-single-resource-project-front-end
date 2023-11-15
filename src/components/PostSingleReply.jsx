@@ -8,7 +8,7 @@ export default function PostSingleReply(){
         thread_id:id,
         reply_user: "",
         reply_message: "",
-        reply_timestamp: Date.now(),
+        reply_timestamp: Date.now()/1000,
         reply_pw: "",
     });
     const nav = useNavigate();
@@ -32,7 +32,7 @@ export default function PostSingleReply(){
      */
     const handleSubmit = async (event) => {
         event.preventDefault();
-        let timeStamp = Date.now();
+        let timeStamp = Date.now()/1000;
         setSingleReply({...singleReply, ["reply_timestamp"]: timeStamp});
         await createReply(singleReply)
             .then(() => {

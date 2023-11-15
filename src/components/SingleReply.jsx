@@ -8,7 +8,7 @@ export default function SingleReply({reply}){
         let pw = prompt("password?");
         console.log(pw);
         await destroyReply(reply.reply_id, {reply_pw: pw})
-            .then(() => navigate(`/posts/${id}`))
+            .then(() => navigate(0))
             .catch(error => console.log(error))
     }
     return(

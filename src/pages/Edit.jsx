@@ -1,4 +1,4 @@
-import PostEditForm from "../Components/PostEditForm";
+import PostEditForm from "../components/PostEditForm";
 
 function Edit() {
   return (
