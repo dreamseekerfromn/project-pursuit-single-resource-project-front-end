@@ -37,7 +37,7 @@ export default function PostSingleReply(){
         await createReply(singleReply)
             .then(() => {
             console.log("create success!");
-            nav(`/posts/${id}`);
+            nav(0);
             })
             .catch((err)=>console.error(err));
         }

@@ -37,7 +37,7 @@ export default function EditReplyForm({reply_id}){
             .then(() => {
             console.log("update success!");
             alert("The Reply is updated");
-            nav(`/posts/${id}`);
+            nav(0);
             })
             .catch((err)=>console.error(err));
         }
