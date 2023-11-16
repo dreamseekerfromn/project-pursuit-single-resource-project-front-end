@@ -6,12 +6,13 @@ import { getAllMessages } from "../api/fetch";
 
 function Posts() {
     const [posts, setPosts] = useState([postsObjInitializer]);
-
+    const [totalPosts, setTotalPosts] = useState(0);
     useEffect(() => {
         getAllMessages()
             .then((responseJSON) => {
                 console.log(responseJSON)
                 setPosts(responseJSON.data.payload);
+                setTotalPosts(responseJSON.data.payload.length)
             })
             .catch((error) => console.log(error));
     }, []);
@@ -34,7 +35,7 @@ function Posts() {
 
     return (
         <div className="posts-container">
-            <h2 className="indexTitle">All Posts</h2>
+            <h2 className="indexTitle">Total Posts: {totalPosts}</h2>
             {posts.sort((prev, next) => prev.time_stamp >= next.time_stamp ? -1 : 1).map((post) => <Post key={post.thread_id} post={post} />)}
         </div>
     )
