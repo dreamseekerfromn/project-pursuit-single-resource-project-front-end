@@ -264,6 +264,8 @@ footer {
 
 .underline {
   text-decoration: underline;
+  font-family: 'Marck Script';
+  font-size: 48px;
 }
 /* Assuming you have a general container class */
 .New {
