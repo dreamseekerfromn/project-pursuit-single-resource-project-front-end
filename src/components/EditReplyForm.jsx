@@ -48,6 +48,7 @@ export default function EditReplyForm({reply_id}){
     */
     return (
         <div className="new_entry">
+        <h2 className="reply-heading">Edit the Reply</h2>
         <form onSubmit={handleSubmit}>
             <label htmlFor="password">password:</label>
             <input
