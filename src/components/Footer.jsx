@@ -34,7 +34,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2023 Your Website Name. All rights reserved.</p>
+        <p>&copy; 2023 POSTR. All rights reserved by Sung Yi & Alexander Tsiklidis.</p>
       </div>
     </footer>
   );
