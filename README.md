@@ -22,7 +22,7 @@ Alexander Tsiklidis & Sung Yi
 
 ## Acknowledgements
 
-Shout Out to all of the Purusit 10.2 Nights and Wekekends Cohort for getting through the single-resource-project. Great job!
+Shout Out to all of the Pursuit 10.2 Nights and Weekends Cohort for getting through the single-resource-project. Great job!
 
 ---
 
