@@ -10,7 +10,7 @@ Our POSTR app is comprised of two repositiories a front-end application that com
 
 ## Getting Started
 
-Please use our deployed front-end website on netlify() and back-end server on render() in order to begin using our app
+Please use our deployed front-end website on netlify(https://lighthearted-stardust-8d6bba.netlify.app/) and back-end server on render() in order to begin using our app
 
 ### Prerequisites
 
