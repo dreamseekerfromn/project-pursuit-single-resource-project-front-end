@@ -1,109 +1,309 @@
-.root {
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
+/* Reset some default styles */
+body, h1, h2, h3, p, ul {
+  margin: 0;
+  padding: 0;
 }
 
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* App Container Styles */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+/* .navbar {
+  background-color: #3498db;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px; /* Adjust margin to spread buttons
+  padding-right: 3rem;
+  padding-left: 3rem;
+  font-size: 18px;
+} */
+
+/* Main Content Styles */
 main {
-    height: 90vh;
-    width: 100vw;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Home Page Styles */
+.home-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.welcome-header {
+  font-size: 2em;
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  color: #555;
+  margin-top: 10px;
+}
+
+.description {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #777;
+}
+
+.feature-list {
+  margin-top: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.feature-item {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #444;
+ 
+}
+
+/* Posts Styles */
+.posts-container {
+  align-items: center;
+  padding: 0% 2% 2% 2%;
+}
+
+.post {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+.post img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.indexTitle {
+  font-size: 24px;
+  color: #3498db;
+}
+
+/* Form Styles */
+.new-entry-container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.new-entry-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-submit {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Post Details Styles */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  padding: 15px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+}
+
+.profile_pic {
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.user_name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-body {
+  margin-top: 15px;
+}
+
+.time_stamp {
+  font-size: 12px;
+  color: #777;
+  margin-right: 15px;
+}
+
+.card-img-top {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #3498db;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Button Styles */
+.button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: #2980b9;
 }
 
 
+.Edit form {
+  max-width: 500px;
+  margin: auto;
+}
+
+.Edit label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.Edit input[type="text"],
+.Edit input[type="checkbox"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.Edit .submit-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.Edit .submit-button:hover {
+  background-color: #0056b3;
+}
+
+.Edit button {
+  background-color: #fff;
+  color: #007bff;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.Edit button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Edit component styles */
+.Edit {
+  padding: 20px;
+}
+
+.Edit h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.underline {
+  text-decoration: underline;
+}
+/* Assuming you have a general container class */
 .New {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  
-  .newPostHeader {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.newPostHeader {
+  font-size: 36px;
+  font-family: 'Quicksand', sans-serif; /* Add the desired Google Font */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333; /* Adjust the color to fit your color scheme */
+}
+
+/* Style for the form, update as needed */
+/* For example purposes, let's add some subtle box shadow and padding */
+.PostNewForm {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* Add any additional styling for the PostNewForm component here */
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar a {
+    margin-right: 0;
+    margin-bottom: 10px;
+    display: block;
   }
 
-  .home-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 40px;
-    text-align: center;
-    background-color: #f9f9f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  
-  .welcome-header {
-    font-size: 32px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .subtitle {
-    font-size: 24px;
-    margin-top: 10px;
-    color: #555;
-  }
-  
-  .description {
-    font-size: 18px;
-    margin-top: 20px;
-    color: #444;
-  }
-  
-  .feature-list {
-    margin-top: 20px;
-  }
-  
-  .feature-item {
-    font-size: 16px;
-    margin-top: 10px;
-    color: green;
-  }
-
-  .new-entry-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  
-  .new-entry-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-label {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  
   .form-input,
   .form-textarea {
-    padding: 10px;
-    margin-bottom: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
+    width: 100%;
   }
-  
-  .form-submit {
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .form-submit:hover {
-    background-color: #0056b3;
-  }
+}

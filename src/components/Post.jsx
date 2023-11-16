@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { postsObjInitializer } from "../interfaces/fetchingObjInitializer";
-import "./Post.css";
+// import "./Post.css";
 
 function Post({ post, index }) {
     return (

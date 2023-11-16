@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Post from "./Post";
 import { postsObjInitializer } from "../interfaces/fetchingObjInitializer";
 import { getAllMessages } from "../api/fetch";
-import './Posts.css'
+// import './Posts.css'
 
 function Posts() {
     const [posts, setPosts] = useState([postsObjInitializer]);

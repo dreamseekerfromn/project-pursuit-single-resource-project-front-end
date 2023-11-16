@@ -32,48 +32,64 @@ function PostNewForm() {
       };
 */
   
-  return (
-    <div className="new-entry-container">
-      <form className="new-entry-form" onSubmit={handleSubmit}>
-        <label className="form-label" htmlFor="user_name">
-          Name:
-        </label>
-        <input
-          className="form-input"
-          id="user_name"
-          value={singlePost.user_name}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="user name"
-          required
-        />
-        <label className="form-label" htmlFor="thread_message">
-          Message:
-        </label>
-        <textarea
-          className="form-textarea"
-          id="thread_message"
-          value={singlePost.thread_message}
-          placeholder="message"
-          onChange={handleTextChange}
-          required
-        />
-        <label className="form-label" htmlFor="profile_pic">
-          Profile:
-        </label>
-        <input
-          className="form-input"
-          id="profile_pic"
-          value={singlePost.profile_pic}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="profile_picture link"
-        />
-        <br />
-        <input className="form-submit" type="submit" value="Submit" />
-      </form>
-    </div>
-  );
+return (
+  <div className="new-entry-container">
+    <form className="new-entry-form" onSubmit={handleSubmit}>
+      <label className="form-label" htmlFor="user_name">
+        Name:
+      </label>
+      <input
+        className="form-input"
+        id="user_name"
+        value={singlePost.user_name}
+        type="text"
+        onChange={handleTextChange}
+        placeholder="user name"
+        required
+      />
+
+      <label className="form-label" htmlFor="thread_message">
+        Message:
+      </label>
+      <textarea
+        className="form-textarea"
+        id="thread_message"
+        value={singlePost.thread_message}
+        placeholder="message"
+        onChange={handleTextChange}
+        required
+      />
+
+      <label className="form-label" htmlFor="profile_pic">
+        Profile:
+      </label>
+      <input
+        className="form-input"
+        id="profile_pic"
+        value={singlePost.profile_pic}
+        type="text"
+        onChange={handleTextChange}
+        placeholder="profile_picture link"
+      />
+
+      <label className="form-label" htmlFor="message_pic">
+        Message Picture:
+      </label>
+      <input
+        className="form-input"
+        id="message_pic"
+        value={singlePost.message_pic}
+        type="text"
+        onChange={handleTextChange}
+        placeholder="message_picture link"
+      />
+
+      <br />
+      <input className="form-submit" type="submit" value="Submit" />
+    </form>
+  </div>
+);
+
 }
 
 export default PostNewForm;
