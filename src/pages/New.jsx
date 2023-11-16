@@ -1,6 +1,4 @@
-import PostNewForm from "../Components/PostNewForm";
-
-
+import PostNewForm from "../components/PostNewForm";
 
 function New() {
   return (
