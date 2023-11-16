@@ -7,7 +7,7 @@ import NavBar from './components/NavBar';
 import Posts from './components/Posts';
 import New from "./pages/New";
 import Edit from './pages/Edit';
-import Show from './Pages/Show';
+import Show from './pages/Show';
 
 
 
